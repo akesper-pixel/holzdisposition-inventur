@@ -1,5 +1,5 @@
 /* HolzDisposition iPhone V4 – robuster Offline-Service-Worker */
-const CACHE = 'holzdisposition-mobile-v4-robust-1';
+const CACHE = 'holzdisposition-mobile-v4-1-lagerorte-fix';
 const CORE = ['./index.html'];
 const OPTIONAL = ['./manifest.webmanifest', './icon-192.png', './icon-512.png'];
 const scopeURL = new URL(self.registration.scope);
