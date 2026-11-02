@@ -1,5 +1,5 @@
 
-const CACHE = 'holzdisposition-mobile-v2';
+const CACHE = 'holzdisposition-mobile-v3';
 
 const ASSETS = [
   './',
@@ -19,13 +19,11 @@ self.addEventListener('install', event => {
 
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys()
-      .then(keys => Promise.all(
-        keys
-          .filter(key => key.startsWith('holzdisposition-mobile-') && key !== CACHE)
-          .map(key => caches.delete(key))
-      ))
-      .then(() => self.clients.claim())
+    caches.keys().then(keys => Promise.all(
+      keys
+        .filter(k => k.startsWith('holzdisposition-mobile-') && k !== CACHE)
+        .map(k => caches.delete(k))
+    )).then(() => self.clients.claim())
   );
 });
 
